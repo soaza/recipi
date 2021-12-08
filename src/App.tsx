@@ -1,9 +1,15 @@
-import React from "react";
-import logo from "./logo.svg";
+import { Route, Routes } from "react-router";
 import "./App.css";
+import RecipesPage from "./Pages/RecipesPage";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <Routes>
+      <Route path="/food" />
+      <Route path="/saved" />
+      <Route path="/" element={<RecipesPage />} />
+    </Routes>
+  );
 }
 
 export default App;
