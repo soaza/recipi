@@ -14,7 +14,7 @@ const RecipeCategoryCard: React.FC<IProps> = (props) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate(`categories?category=${category.strCategory}`);
+    navigate(`/categories?category=${category.strCategory}`);
   };
 
   return (

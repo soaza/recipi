@@ -10,4 +10,6 @@ export interface IMeal {
   strMeal: string;
   strMealThumb: string;
   strInstructions: string;
+  strYoutube: string;
+  strSource: string;
 }

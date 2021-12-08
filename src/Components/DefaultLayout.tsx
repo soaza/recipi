@@ -1,6 +1,7 @@
 import { Layout, Menu } from "antd";
 
 import { SearchOutlined, HeartOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const { Content, Sider } = Layout;
 
@@ -16,9 +17,11 @@ const DefaultLayout: React.FC<IProps> = (props) => {
       <Sider>
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-          <Menu.Item key="1" icon={<SearchOutlined />}>
-            View Recipes
-          </Menu.Item>
+          <Link to="/recipes">
+            <Menu.Item key="1" icon={<SearchOutlined />}>
+              View Recipes
+            </Menu.Item>
+          </Link>
           <Menu.Item key="2" icon={<HeartOutlined />}>
             My Recipes
           </Menu.Item>
