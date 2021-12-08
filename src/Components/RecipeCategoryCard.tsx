@@ -19,7 +19,9 @@ const RecipeCategoryCard: React.FC<IProps> = (props) => {
 
   return (
     <Card
-      onClick={handleNavigate}
+      onClick={(e) => {
+        handleNavigate();
+      }}
       hoverable
       style={{ width: 240, minHeight: 350 }}
       cover={<img alt={category.idCategory} src={category.strCategoryThumb} />}
@@ -31,6 +33,9 @@ const RecipeCategoryCard: React.FC<IProps> = (props) => {
             ellipsis={{
               rows: 3,
               expandable: true,
+              onExpand: (e) => {
+                e.stopPropagation();
+              },
             }}
           >
             {category.strCategoryDescription}

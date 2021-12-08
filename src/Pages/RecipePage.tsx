@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getMealById } from "../Common/api";
 import { IMeal } from "../Common/types.d";
 import DefaultLayout from "../Components/DefaultLayout";
+import Loader from "../Components/Loader";
 
 const RecipePage = () => {
   const mealId = new URL(window.location.href).searchParams.get(
@@ -10,12 +11,15 @@ const RecipePage = () => {
   ) as string;
 
   const [mealData, setMealData] = useState<IMeal>();
-  console.log(mealData);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMealData = async () => {
+      setLoading(true);
       const res = await getMealById(mealId);
+
       setMealData(res.meals[0]);
+      setLoading(false);
     };
 
     fetchMealData();
@@ -23,7 +27,8 @@ const RecipePage = () => {
 
   return (
     <DefaultLayout>
-      {mealData && (
+      {loading && <Loader />}
+      {!loading && mealData && (
         <Row justify="space-between">
           <Col span={10}>
             <img width="100%" src={mealData.strMealThumb} />
