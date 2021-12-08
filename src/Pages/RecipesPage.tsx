@@ -1,6 +1,6 @@
 import { Col, Row } from "antd";
 import { useEffect, useState } from "react";
-import { getRecipeCategories } from "../Common/api";
+import { getAllRecipeCategories } from "../Common/api";
 import { IRecipeCategory } from "../Common/types.d";
 import DefaultLayout from "../Components/DefaultLayout";
 import RecipeCategoryCard from "../Components/RecipeCategoryCard";
@@ -10,7 +10,7 @@ const RecipesPage = () => {
 
   useEffect(() => {
     const loadRecipes = async () => {
-      const res = await getRecipeCategories();
+      const res = await getAllRecipeCategories();
 
       setCategories(res.categories);
     };
