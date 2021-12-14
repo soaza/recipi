@@ -35,7 +35,7 @@ const RecipePage = () => {
     if (savedRecipes.includes(mealId)) {
       setSaved(true);
     }
-  }, []);
+  }, [mealId]);
 
   const saveRecipe = () => {
     const savedRecipes = localStorage.getItem("recipes")

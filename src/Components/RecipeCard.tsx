@@ -1,10 +1,7 @@
-import HeartOutlined from "@ant-design/icons/lib/icons/HeartOutlined";
-import { Button, Col, Divider, Row } from "antd";
+import { Col, Divider, Row } from "antd";
 import { useEffect, useState } from "react";
 import { getMealById } from "../Common/api";
 import { IMeal } from "../Common/types.d";
-import DefaultLayout from "../Components/DefaultLayout";
-import Loader from "../Components/Loader";
 
 interface IProps {
   mealId: string;
