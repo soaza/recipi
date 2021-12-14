@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { getMealById } from "../Common/api";
 import { IMeal } from "../Common/types.d";
 import { Card, Typography } from "antd";
 import Meta from "antd/lib/card/Meta";
@@ -40,8 +38,6 @@ const MealCard: React.FC<IProps> = (props) => {
       />
     </Card>
   );
-
-  return <div />;
 };
 
 export default MealCard;

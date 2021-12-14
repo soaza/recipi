@@ -1,7 +1,7 @@
 import { Layout, Menu } from "antd";
 
 import { SearchOutlined, HeartOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const { Content, Sider } = Layout;
 
@@ -11,17 +11,24 @@ interface IProps {
 
 const DefaultLayout: React.FC<IProps> = (props) => {
   const { children } = props;
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(`/recipes`);
+  };
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Sider>
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-          <Link to="/recipes">
-            <Menu.Item key="1" icon={<SearchOutlined />}>
-              View Recipes
-            </Menu.Item>
-          </Link>
+          <Menu.Item
+            onClick={() => handleNavigation("/recipes")}
+            key="1"
+            icon={<SearchOutlined />}
+          >
+            View Recipes
+          </Menu.Item>
           <Menu.Item key="2" icon={<HeartOutlined />}>
             My Recipes
           </Menu.Item>

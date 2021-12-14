@@ -31,7 +31,11 @@ const RecipePage = () => {
       {!loading && mealData && (
         <Row justify="space-between">
           <Col span={10}>
-            <img width="100%" src={mealData.strMealThumb} />
+            <img
+              alt={mealData.idMeal}
+              width="100%"
+              src={mealData.strMealThumb}
+            />
           </Col>
           <Col span={12}>
             <h1>{mealData.strMeal}</h1>
@@ -49,6 +53,8 @@ const RecipePage = () => {
                       {(mealData as any)[`strIngredient${i}`]}
                     </div>
                   );
+                } else {
+                  return <div />;
                 }
               })}
             </p>

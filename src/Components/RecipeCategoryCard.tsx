@@ -1,7 +1,7 @@
 import { Card, Typography } from "antd";
 import Meta from "antd/lib/card/Meta";
 import { IRecipeCategory } from "../Common/types.d";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const { Paragraph } = Typography;
 
