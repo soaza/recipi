@@ -14,7 +14,7 @@ const DefaultLayout: React.FC<IProps> = (props) => {
   const navigate = useNavigate();
 
   const handleNavigation = (path: string) => {
-    navigate(`/recipes`);
+    navigate(path);
   };
 
   return (
@@ -29,7 +29,11 @@ const DefaultLayout: React.FC<IProps> = (props) => {
           >
             View Recipes
           </Menu.Item>
-          <Menu.Item key="2" icon={<HeartOutlined />}>
+          <Menu.Item
+            onClick={() => handleNavigation("/saved")}
+            key="2"
+            icon={<HeartOutlined />}
+          >
             My Recipes
           </Menu.Item>
         </Menu>
